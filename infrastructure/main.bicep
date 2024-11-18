@@ -2,7 +2,7 @@
 param environment string
 
 var location = 'centralus'
-var myName = 'scottsauber'
+var myName = 'rodriguez-g'
 var appNameWithEnvironment = 'workshop-dnazghbicep-${myName}-${environment}'
 
 targetScope = 'resourceGroup'
