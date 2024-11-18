@@ -11,6 +11,7 @@ module appService './appservice.bicep' = {
   name: 'appservice'
   params: {
     appName: appNameWithEnvironment
+    environment: environment
     location: location
   }
 }
