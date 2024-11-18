@@ -37,7 +37,7 @@ var builder = WebApplication.CreateBuilder(args);
          builder.Services.AddSingleton<IVersionService, VersionService>();
 
          builder.Configuration.AddAzureKeyVault(
-             new Uri($"https://kv-{YOURNAMEHERE}-{builder.Environment.EnvironmentName}.vault.azure.net/"),
+             new Uri($"https://kv-rodriguez-g-{builder.Environment.EnvironmentName}.vault.azure.net/"),
              new ChainedTokenCredential(new AzureCliCredential(), new ManagedIdentityCredential()));
 
          builder.Services.AddApplicationInsightsTelemetry(options =>
