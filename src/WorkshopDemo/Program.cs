@@ -5,6 +5,7 @@ using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 using WorkshopDemo.Core.Common;
 using WorkshopDemo.HealthChecks;
+using Azure.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,10 @@ builder.Services.AddHealthChecks()
     .AddCheck<WorkshopDemoHealthCheck>(nameof(WorkshopDemoHealthCheck));
 builder.Services.AddSingleton<IFileService, FileService>();
 builder.Services.AddSingleton<IVersionService, VersionService>();
+
+builder.Configuration.AddAzureKeyVault(
+    new Uri($"https://kv-rodriguez-g-{builder.Environment.EnvironmentName}.vault.azure.net/"),
+    new DefaultAzureCredential());
 
 var app = builder.Build();
 
