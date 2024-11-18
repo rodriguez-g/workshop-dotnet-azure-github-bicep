@@ -35,7 +35,8 @@ public class WeatherForecastController(ILogger<WeatherForecastController> logger
         logger.LogInformation("Get Slow WeatherForecast called with wait of {wait}", randomWaitInMs);
         var summaries = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            // "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Freezing"
         };
         var forecasts =  Enumerable.Range(1, 5).Select(index =>
                 new WeatherForecast
